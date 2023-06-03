@@ -1,21 +1,35 @@
 {
-  "name": "product-app",
+  "name": "product-catalog",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.4.0",
+    "bootstrap": "^5.2.3",
+    "mysql2": "^3.2.4",
+    "nth-check": "^2.1.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.7.4",
+    "react-bootstrap-navbar": "^1.1.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-icons": "^4.8.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.11.0",
+    "react-scripts": "^5.0.1",
+    "redux": "^4.2.1",
+    "sass": "^1.62.1",
+    "styled-components": "^5.3.10",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.81.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "node-sass src/sass/main.scss src/css/main.css"
   },
   "eslintConfig": {
     "extends": [
