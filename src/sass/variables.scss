@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+$Main-font: "Montserrat", sans-serif;
+$bg2: #fde3fc;
+$bg: #272643;
+$text2: #ffff;
+$text: #3b8bb9;
+
+$primary: #272643;
+
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;
+
+$checkbox-size: 20px;
+$checkbox-border: #cecece;
+$checkbox-selected: #02BB72;
+
+$header-height: 72px;
+
+$sm: 37.5em;
+$md: 48em;
+$lg: 64em;
+$xl: 75em;
+
+$width_sm: 760px;
+
+@mixin breakpoint($point) {
+  @if $point == md {
+    @media (min-width: $md) {
+      @content;
+    }
+  }
+}
