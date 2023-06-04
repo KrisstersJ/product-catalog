@@ -105,12 +105,12 @@ const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    debugger
 
     const isValid = validateFields(openType);
 
     if (isValid) {
       const data = new FormData(e.target);
+      console.log(data);
       saveProduct(Object.fromEntries(data.entries()));
       navigate("/");
     }
