@@ -44,7 +44,6 @@ const Header = ({ menuOpen, toggleMenu, isAddProductPage, massDelete }) => {
                 </button>
                 <button
                   className={styles.nav__item}
-                  role="button"
                   id="delete-product.btn"
                   onClick={massDelete}
                 >
