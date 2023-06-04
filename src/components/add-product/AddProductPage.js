@@ -98,17 +98,18 @@ const AddProduct = () => {
 
     setErrors(newErrors);
 
+
     const isValid = Object.keys(newErrors).length === 0;
     return isValid;
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    debugger;
+    debugger
 
     const isValid = validateFields(openType);
 
-    if (!isValid) {
+    if (isValid) {
       const data = new FormData(e.target);
       saveProduct(Object.fromEntries(data.entries()));
       navigate("/");
