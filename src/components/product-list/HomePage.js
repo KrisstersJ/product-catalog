@@ -15,14 +15,14 @@ const HomePage = () => {
   }, []);
 
   function getProducts() {
-    axios.get("http://localhost:80/api/public/").then(function (response) {
+    axios.get("https://api-juniortestkristersjurcs.herokuapp.com/").then(function (response) {
       setProductList(response.data);
     });
   }
 
   async function massDelete() {
     try {
-      const response = await axios.delete("http://localhost:80/api/public/", {
+      const response = await axios.delete("https://api-juniortestkristersjurcs.herokuapp.com/", {
         data: checkedProductList,
       });
       if (response.status === 200) {

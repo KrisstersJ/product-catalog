@@ -98,7 +98,7 @@ const AddProduct = () => {
     if (state.sku) {
       try {
         const response = await axios.get(
-          `http://localhost:80/api/public/?sku=${state.sku}`
+          `https://api-juniortestkristersjurcs.herokuapp.com/public/?sku=${state.sku}`
         );
         if (response.data.length > 0) {
           newErrors.sku = "SKU already exists";
@@ -145,7 +145,7 @@ const AddProduct = () => {
     }
 
     axios
-      .post("http://localhost:80/api/public/", productData)
+      .post("https://api-juniortestkristersjurcs.herokuapp.com/", productData)
       .then(function (response) {
         console.log(response.data);
       })
