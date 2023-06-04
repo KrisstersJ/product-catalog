@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import style from "./AddProductPage.module.scss";
 import Dropdown from "./Dropdown";
-import Header from "../header/Header";
+import Header from "../Header/Header";
 import { ValidationFields, getInputPlaceholder } from "./FieldValidations";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import ProductCard from "./ProductCard";
 import axios from "axios";
-import Header from "../header/Header";
+import Header from "../Header/Header";
 
 const HomePage = () => {
   const [menuOpen, setMenuOpen] = useState(false);
