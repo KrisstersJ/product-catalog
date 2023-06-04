@@ -95,18 +95,6 @@ const AddProduct = () => {
     if (!openType) {
       newErrors.productType = "You have not selected a product type.";
     }
-    if (state.sku) {
-      try {
-        const response = await axios.get(
-          `https://api-juniortestkristersjurcs.herokuapp.com/`
-        );
-        if (response.data.length > 0) {
-          newErrors.sku = "SKU already exists";
-        }
-      } catch (error) {
-        console.error(error);
-      }
-    }
 
     setErrors(newErrors);
 
