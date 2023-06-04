@@ -104,6 +104,7 @@ const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    debugger;
 
     const isValid = validateFields(openType);
 
@@ -133,7 +134,7 @@ const AddProduct = () => {
     }
 
     axios
-      .post("https://api-juniortestkristersjurcs.herokuapp.com/", productData)
+      .post("https://api-juniortestkristersjurcs.herokuapp.com/public", productData)
       .then(function (response) {
         console.log(response.data);
       })
