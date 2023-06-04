@@ -110,7 +110,7 @@ const AddProduct = () => {
 
     if (isValid) {
       const data = new FormData(e.target);
-      console.log(data);
+      console.log(Object.fromEntries(data.entries()));
       saveProduct(Object.fromEntries(data.entries()));
       navigate("/");
     }
