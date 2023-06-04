@@ -17,6 +17,10 @@
     "sass": "^1.62.1",
     "web-vitals": "^2.1.4"
   },
+
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "node --max_old_space_size=8192 node_modules/.bin/react-scripts start",
     "build": "node --max_old_space_size=8192 node_modules/.bin/react-scripts build",
