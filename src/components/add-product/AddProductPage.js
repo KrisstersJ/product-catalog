@@ -181,7 +181,6 @@ const AddProduct = () => {
           <Dropdown
             placeHolder="Select..."
             options={options}
-            name="attribute"
             onChange={handleProductTypeChange}
           />
           {errors.productType && (
