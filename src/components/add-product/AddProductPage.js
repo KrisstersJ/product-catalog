@@ -192,6 +192,7 @@ const AddProduct = () => {
             value={openType}
             onChange={(e) => handleProductTypeChange(e.target.value)}
             className={style.form__select}
+            id="productType"
           >
             {renderSelectOptions()}
             {options.map((option) => (
