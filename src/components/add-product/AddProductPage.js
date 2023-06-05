@@ -39,9 +39,9 @@ const AddProduct = () => {
   }
 
   const options = [
-    { value: "dvd", label: "DVD" },
-    { value: "book", label: "Book" },
-    { value: "furniture", label: "Furniture" }
+    { value: "DVD", label: "DVD" },
+    { value: "Book", label: "Book" },
+    { value: "Furniture", label: "Furniture" }
   ];
 
   const renderInputField = (fieldName, label, placeholder) => (
@@ -65,20 +65,20 @@ const AddProduct = () => {
     const newErrors = {};
     for (const fieldName in ValidationFields) {
       if (
-        openType === "dvd" &&
+        openType === "DVD" &&
         ["weight", "height", "width", "length"].includes(fieldName)
       ) {
         continue;
       }
 
       if (
-        openType === "book" &&
+        openType === "Book" &&
         ["size", "height", "width", "length"].includes(fieldName)
       ) {
         continue;
       }
 
-      if (openType === "furniture" && ["size", "weight"].includes(fieldName)) {
+      if (openType === "Furniture" && ["size", "weight"].includes(fieldName)) {
         continue;
       }
 
@@ -131,13 +131,13 @@ const AddProduct = () => {
     productData.attribute = openType;
 
     switch (openType) {
-      case "dvd":
+      case "DVD":
         productData.attribute_value = `${state.size}MB`;
         break;
-      case "book":
+      case "Book":
         productData.attribute_value = `${state.weight}KG`;
         break;
-      case "furniture":
+      case "Furniture":
         productData.attribute_value = `${state.height}x${state.width}x${state.length}`;
         break;
       default:
@@ -190,9 +190,9 @@ const AddProduct = () => {
             </div>
           )}
         </div>
-        {openType === "dvd" && renderInputField("size", "Size (MB)", "700")}
-        {openType === "book" && renderInputField("weight", "Weight (KG)", "2")}
-        {openType === "furniture" && (
+        {openType === "DVD" && renderInputField("size", "Size (MB)", "700")}
+        {openType === "Book" && renderInputField("weight", "Weight (KG)", "2")}
+        {openType === "Furniture" && (
           <>
             {renderInputField("height", "Height (CM)", "24")}
             {renderInputField("width", "Width (CM)", "45")}
