@@ -146,7 +146,10 @@ const AddProduct = () => {
     }
 
     axios
-      .post("https://api-juniortestkristersjurcs.herokuapp.com/public", productData)
+      .post(
+        "https://api-juniortestkristersjurcs.herokuapp.com/public",
+        productData
+      )
       .then(function (response) {
         console.log(response.data);
       })
@@ -174,13 +177,12 @@ const AddProduct = () => {
           "Price ($)",
           getInputPlaceholder("price", openType)
         )}
-        <div>
+        <div id="productType">
           <Dropdown
             placeHolder="Select..."
             options={options}
             name="attribute"
             onChange={handleProductTypeChange}
-            id="productType"
           />
           {errors.productType && (
             <div className={style.form__error}>
