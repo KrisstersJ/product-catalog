@@ -49,8 +49,12 @@ const Dropdown = ({ placeHolder, options, onChange }) => {
   };
 
   return (
-    <div className={style["dropdown-container"]} id="productType">
-      <div onClick={handleInputClick} className={style["dropdown-input"]}>
+    <div className={style["dropdown-container"]}>
+      <div
+        onClick={handleInputClick}
+        className={style["dropdown-input"]}
+        id="productType"
+      >
         <div>{getDisplay()}</div>
         <div className={style["dropdown-tool"]}>
           <Icon />
