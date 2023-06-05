@@ -96,8 +96,20 @@ const AddProduct = () => {
       newErrors.productType = "You have not selected a product type.";
     }
 
-    setErrors(newErrors);
+    if (state.sku) {
+      try {
+        const response = await axios.get(
+          `https://api-juniortestkristersjurcs.herokuapp.com/public/?sku=${state.sku}`
+        );
+        if (response.data.length > 0) {
+          newErrors.sku = "SKU already exists";
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    }
 
+    setErrors(newErrors);
 
     const isValid = Object.keys(newErrors).length === 0;
     return isValid;
@@ -108,9 +120,8 @@ const AddProduct = () => {
 
     const isValid = validateFields(openType);
 
-    if (isValid) {
+    if (!isValid) {
       const data = new FormData(e.target);
-      console.log(Object.fromEntries(data.entries()));
       saveProduct(Object.fromEntries(data.entries()));
       navigate("/");
     }
