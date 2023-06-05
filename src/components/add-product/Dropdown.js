@@ -66,6 +66,7 @@ const Dropdown = ({ placeHolder, options, onChange }) => {
             <div
               onClick={() => onItemClick(option)}
               key={option.value}
+              id={option.value}
               className={`${style["dropdown-item"]} ${
                 isSelected(option) && "selected"
               }`}
