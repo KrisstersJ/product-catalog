@@ -60,7 +60,6 @@ const Dropdown = ({ placeHolder, options, onChange }) => {
           <Icon />
         </div>
       </div>
-      {showMenu && (
         <div className={style["dropdown-menu"]} id="productType">
           {options.map((option) => (
             <div
@@ -75,8 +74,7 @@ const Dropdown = ({ placeHolder, options, onChange }) => {
               {option.label}
             </div>
           ))}
-        </div>
-      )}
+        </div> 
     </div>
   );
 };
