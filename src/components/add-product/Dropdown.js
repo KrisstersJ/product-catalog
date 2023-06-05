@@ -61,7 +61,7 @@ const Dropdown = ({ placeHolder, options, onChange }) => {
         </div>
       </div>
       {showMenu && (
-        <div className={style["dropdown-menu"]}>
+        <div className={style["dropdown-menu"]} id="productType">
           {options.map((option) => (
             <div
               onClick={() => onItemClick(option)}
