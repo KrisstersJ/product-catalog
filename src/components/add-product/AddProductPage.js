@@ -26,7 +26,7 @@ const AddProduct = () => {
   const navigate = useNavigate();
 
   const handleProductTypeChange = (selectedOption) => {
-    setType(selectedOption.value);
+    setType(selectedOption);
     setErrors({});
   };
 
@@ -43,6 +43,17 @@ const AddProduct = () => {
     { value: "Book", label: "Book" },
     { value: "Furniture", label: "Furniture" }
   ];
+
+  const renderSelectOptions = () => {
+    if (!openType) {
+      return (
+        <option value="" disabled>
+          Select...
+        </option>
+      );
+    }
+    return null;
+  };
 
   const renderInputField = (fieldName, label, placeholder) => (
     <div>
@@ -178,11 +189,22 @@ const AddProduct = () => {
           getInputPlaceholder("price", openType)
         )}
         <div>
-          <Dropdown
-            placeHolder="Select..."
-            options={options}
-            onChange={handleProductTypeChange}
-          />
+          <select
+            value={openType}
+            onChange={(e) => handleProductTypeChange(e.target.value)}
+            className={style.form__select}
+          >
+            {renderSelectOptions()}
+            {options.map((option) => (
+              <option
+                key={option.value}
+                value={option.value}
+                className={style.form__options}
+              >
+                {option.label}
+              </option>
+            ))}
+          </select>
           {errors.productType && (
             <div className={style.form__error}>
               {errors.productType} Try again!
