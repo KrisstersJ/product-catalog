@@ -177,7 +177,7 @@ const AddProduct = () => {
           "Price ($)",
           getInputPlaceholder("price", openType)
         )}
-        <div id="productType">
+        <div>
           <Dropdown
             placeHolder="Select..."
             options={options}
