@@ -133,15 +133,18 @@ const AddProduct = () => {
     return isValid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    var isValidvalue = false;
 
+    let isValidValue;
     const isValid = validateFields(openType);
-    isValid.then((value) => {
-      isValidvalue = value;
+    await isValid.then((value) => {
+      isValidValue = value;
     });
-    if (!isValidvalue) {
+
+    console.log(isValidValue);
+
+    if (isValidValue) {
       const data = new FormData(e.target);
       saveProduct(Object.fromEntries(data.entries()));
       navigate("/");
