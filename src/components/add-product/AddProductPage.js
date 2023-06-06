@@ -141,7 +141,7 @@ const AddProduct = () => {
     isValid.then((value) => {
       isValidvalue = value;
     });
-    if (isValidvalue) {
+    if (!isValidvalue) {
       const data = new FormData(e.target);
       saveProduct(Object.fromEntries(data.entries()));
       navigate("/");
