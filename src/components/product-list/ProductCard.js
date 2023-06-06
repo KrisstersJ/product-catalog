@@ -38,7 +38,8 @@ const ProductCard = ({
         value={product.id}
         onChange={handleChange}
         checked={checkedItems[product.id] || false}
-        className={styles["delete-checkbox"]}
+        className="delete-checkbox"
+        id={styles["delete-checkbox"]}
       />
       <div className={styles.card__info}>SKU: {product.sku}</div>
       <div className={styles.card__info}>{product.name}</div>
