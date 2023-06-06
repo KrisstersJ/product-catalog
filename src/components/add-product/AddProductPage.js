@@ -111,8 +111,16 @@ const AddProduct = () => {
         const response = await axios.get(
           `https://api-juniortestkristersjurcs.herokuapp.com/public/?sku=${state.sku}`
         );
-        if (response.data.length > 0) {
-          newErrors.sku = "SKU already exists";
+
+        const responseData = response.data;
+        if (Array.isArray(responseData)) {
+          const matchingData = responseData.filter(
+            (data) => data.sku === state.sku
+          );
+
+          if (matchingData.length > 0) {
+            newErrors.sku = "SKU already exists";
+          }
         }
       } catch (error) {
         console.error(error);
@@ -127,10 +135,13 @@ const AddProduct = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    var isValidvalue = false;
 
     const isValid = validateFields(openType);
-
-    if (!isValid) {
+    isValid.then((value) => {
+      isValidvalue = value;
+    });
+    if (isValidvalue) {
       const data = new FormData(e.target);
       saveProduct(Object.fromEntries(data.entries()));
       navigate("/");

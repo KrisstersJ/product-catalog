@@ -5,7 +5,7 @@ export const ValidationFields = {
       "SKU should contain between 8-12 characters and shouldn't include any special characters. Try again!",
   },
   name: {
-    pattern: /^[A-Za-z\s]+$/,
+    pattern: /^[A-Za-z0-9]+$/,
     errorMessage: "Name should only contain alphabets and spaces. Try again!",
   },
   price: {
