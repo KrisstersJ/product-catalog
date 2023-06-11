@@ -1,0 +1,51 @@
+@import "../../sass/variables.scss";
+@import "../../sass/breakpoints.scss";
+
+.card {
+  position: relative;
+  display: inline-block;
+  background-color: $bg;
+  color: $text2;
+  width: 310px;
+  height: 200px;
+  padding: $spacing-md;
+  margin: $spacing-md;
+  border-radius: 10px;
+  border: 3px solid black;
+  top: 75px;
+
+  &--green {
+    border: 3px solid blue;
+  }
+  @include media("<=tablet") {
+    &--open {
+      top: 200px;
+    }
+  }
+
+  &__info {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+  }
+}
+
+#delete-checkbox {
+  position: absolute;
+  display: inline-block;
+  top: $spacing-sm;
+  left: $spacing-sm;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
